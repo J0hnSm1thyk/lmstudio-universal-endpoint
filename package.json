@@ -6,7 +6,6 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "tsc -p tsconfig.json && node --test test/*.test.js",
     "probe": "tsc -p tsconfig.json && node dist/probe.js",
     "dev": "lms dev",
     "push": "lms push"

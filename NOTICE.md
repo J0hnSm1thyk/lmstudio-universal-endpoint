@@ -12,7 +12,7 @@ OpenAI client integration, message conversion, streaming response handling, and 
 
 ## Changes in this derivative
 
-This independently maintained derivative includes, among other changes:
+This derivative includes the following changes:
 
 - removal of the hard-coded model catalogue;
 - removal of model-name-based provider detection;
@@ -23,7 +23,7 @@ This independently maintained derivative includes, among other changes:
 - temperature, max token, stop sequence, and request timeout controls;
 - explicit HTTP, connection, and timeout error messages;
 - API credential redaction and safer logging behavior;
-- endpoint integration tests, continuous integration, and expanded documentation; and
+- endpoint probes, continuous integration, and installation documentation; and
 - an independent plugin identity that does not overwrite the upstream plugin.
 
 This repository is not affiliated with or endorsed by LM Studio or Element Labs.

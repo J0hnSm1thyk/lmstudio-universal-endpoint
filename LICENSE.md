@@ -1,8 +1,7 @@
 # Licensing
 
-This repository contains upstream-derived material and independently authored modifications. The
-two categories are described separately below so that this repository does not claim ownership of
-the upstream work.
+This repository contains upstream-derived material and changes made in this repository. The two
+categories are described separately below.
 
 ## Upstream-derived material
 
@@ -19,12 +18,12 @@ license, but the downloaded artifact did not contain a standalone license file o
 This repository preserves that fact for attribution and does not purport to relicense the upstream
 author's material.
 
-## Independently authored modifications
+## Changes made in this repository
 
 Copyright (c) 2026 J0hnSm1thyk
 
-The modifications, tests, documentation, and other original contributions authored specifically
-for this repository are licensed under the ISC License:
+The modifications and documentation created for this repository are licensed under the ISC
+License:
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without
 fee is hereby granted, provided that the above copyright notice and this permission notice appear
