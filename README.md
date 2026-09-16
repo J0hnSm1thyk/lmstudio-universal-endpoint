@@ -2,8 +2,9 @@
 
 [![CI](https://github.com/J0hnSm1thyk/lmstudio-universal-endpoint/actions/workflows/ci.yml/badge.svg)](https://github.com/J0hnSm1thyk/lmstudio-universal-endpoint/actions/workflows/ci.yml)
 
-An LM Studio plugin for connecting the chat UI to OpenAI-compatible APIs without a fixed model
-list. Enter the Base URL, API key, and model ID you want to use.
+An LM Studio plugin for connecting the chat UI to any OpenAI-compatible API without a fixed model
+list. Enter the Base URL, API key, and model ID you want to use. The plugin does not infer a
+provider from the model name: every endpoint follows the same configuration and request path.
 
 This project is based on
 [`lmstudio/openai-compat-endpoint`](https://lmstudio.ai/lmstudio/openai-compat-endpoint) and is
@@ -13,7 +14,7 @@ plugin.
 
 ## Features
 
-- Free-form model IDs such as `glm-5.3-flash`, `deepseek-chat`, and `qwen3-coder`
+- Free-form model IDs such as `qwen3-coder`, `deepseek-chat`, `glm-5.3-flash`, or a private model ID
 - Configurable Base URL and protected API key
 - Streaming responses in the LM Studio chat UI
 - System, user, assistant, and tool messages
@@ -61,16 +62,21 @@ Per-chat settings:
 - **Max Tokens**: `0` uses the endpoint default
 - **Stop Sequences**: optional stop strings
 
-### Z.ai Coding Plan
+## Provider examples
 
-```yaml
-Base URL: https://api.z.ai/api/coding/paas/v4
-API Key: <your Z.ai API key>
-Model ID: glm-5.3-flash
-```
+These are examples only. The plugin has no provider-specific routing or model allowlist.
 
-The same plugin can be used with OpenRouter, LM Studio Server, vLLM, llama.cpp server, and other
-OpenAI-compatible endpoints.
+| Endpoint | Base URL example | Model ID |
+| --- | --- | --- |
+| OpenAI | `https://api.openai.com/v1` | A model available to your account |
+| OpenRouter | `https://openrouter.ai/api/v1` | An OpenRouter model ID |
+| LM Studio Server | `http://localhost:1234/v1` | A loaded local model ID |
+| vLLM | `http://localhost:8000/v1` | The served model ID |
+| llama.cpp server | `http://localhost:8080/v1` | The configured model alias |
+| Z.ai Coding Plan | `https://api.z.ai/api/coding/paas/v4` | `glm-5.3-flash` or another available model |
+| Other compatible API | `https://provider.example/v1` | The exact model ID accepted by that API |
+
+Ports, paths, and model IDs can vary by provider or server configuration.
 
 ## Check an endpoint
 
@@ -78,15 +84,15 @@ List models using `GET {baseURL}/models`:
 
 ```powershell
 $env:OPENAI_API_KEY = "<API Key>"
-npm run probe -- --base-url "https://api.z.ai/api/coding/paas/v4"
+npm run probe -- --base-url "https://provider.example/v1"
 ```
 
 Send a streaming request to `POST {baseURL}/chat/completions`:
 
 ```powershell
 $env:OPENAI_API_KEY = "<API Key>"
-npm run probe -- --base-url "https://api.z.ai/api/coding/paas/v4" `
-  --model "glm-5.3-flash" `
+npm run probe -- --base-url "https://provider.example/v1" `
+  --model "your-model-id" `
   --prompt "Reply with OK."
 ```
 

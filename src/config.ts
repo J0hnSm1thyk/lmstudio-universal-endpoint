@@ -9,7 +9,7 @@ export const configSchematics = createConfigSchematics()
     {
       displayName: "Model ID",
       subtitle: "Enter the exact model ID accepted by the configured OpenAI-compatible endpoint.",
-      placeholder: "glm-5.3-flash",
+      placeholder: "your-model-id",
     },
     "",
   )
@@ -57,7 +57,7 @@ export const globalConfigSchematics = createConfigSchematics()
     {
       displayName: "Base URL",
       subtitle: "Include the API version path, for example https://api.example.com/v1.",
-      placeholder: "https://api.z.ai/api/coding/paas/v4",
+      placeholder: "https://provider.example/v1",
     },
     "",
   )

@@ -19,7 +19,7 @@ This derivative includes the following changes:
 - free-form model ID input;
 - generic Base URL and protected API Key settings;
 - OpenAI-compatible `GET /models` discovery support through a reusable helper and CLI probe;
-- Z.ai Coding Plan-compatible configuration;
+- configuration for hosted and self-hosted OpenAI-compatible providers;
 - temperature, max token, stop sequence, and request timeout controls;
 - explicit HTTP, connection, and timeout error messages;
 - API credential redaction and safer logging behavior;

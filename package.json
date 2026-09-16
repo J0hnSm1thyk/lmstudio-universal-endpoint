@@ -22,9 +22,11 @@
   },
   "keywords": [
     "lm-studio",
+    "llm",
+    "local-llm",
     "openai-compatible",
-    "z-ai",
     "openrouter",
+    "self-hosted",
     "vllm",
     "llama-cpp"
   ],
