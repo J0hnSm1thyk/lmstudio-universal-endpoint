@@ -1,0 +1,6 @@
+{
+  "type": "plugin",
+  "runner": "node",
+  "owner": "local",
+  "name": "universal-openai-endpoint"
+}

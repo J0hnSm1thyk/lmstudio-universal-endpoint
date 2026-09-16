@@ -1,0 +1,50 @@
+{
+  "name": "lms-plugin-universal-openai-endpoint",
+  "version": "1.1.0",
+  "description": "Use any OpenAI-compatible chat completions endpoint in LM Studio.",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node --test test/*.test.js",
+    "probe": "tsc -p tsconfig.json && node dist/probe.js",
+    "dev": "lms dev",
+    "push": "lms push"
+  },
+  "author": "J0hnSm1thyk",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J0hnSm1thyk/lmstudio-universal-endpoint.git"
+  },
+  "homepage": "https://github.com/J0hnSm1thyk/lmstudio-universal-endpoint#readme",
+  "bugs": {
+    "url": "https://github.com/J0hnSm1thyk/lmstudio-universal-endpoint/issues"
+  },
+  "keywords": [
+    "lm-studio",
+    "openai-compatible",
+    "z-ai",
+    "openrouter",
+    "vllm",
+    "llama-cpp"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@lmstudio/sdk": "1.4.0",
+    "openai": "5.2.0",
+    "ws": "8.21.3",
+    "zod": "3.24.1",
+    "zod-to-json-schema": "3.22.5"
+  },
+  "overrides": {
+    "ws": "8.21.3",
+    "zod-to-json-schema": "3.22.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.8",
+    "typescript": "^5.9.3"
+  }
+}

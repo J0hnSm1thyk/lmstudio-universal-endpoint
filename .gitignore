@@ -1,0 +1,12 @@
+.lmstudio
+.pnpm-store
+node_modules
+dist
+.env
+.env.*
+!.env.example
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
