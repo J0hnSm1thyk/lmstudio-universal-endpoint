@@ -1,11 +1,12 @@
 {
   "name": "lms-plugin-universal-openai-endpoint",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Use any OpenAI-compatible chat completions endpoint in LM Studio.",
   "private": true,
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "verify": "tsc -p tsconfig.json && node scripts/verify-streaming.cjs",
     "probe": "tsc -p tsconfig.json && node dist/probe.js",
     "dev": "lms dev",
     "push": "lms push"

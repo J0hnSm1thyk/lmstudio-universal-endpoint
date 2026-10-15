@@ -17,6 +17,7 @@ plugin.
 - Free-form model IDs such as `qwen3-coder`, `deepseek-chat`, `glm-5.3-flash`, or a private model ID
 - Configurable Base URL and protected API key
 - Streaming responses in the LM Studio chat UI
+- Separate reasoning/thinking streams from `reasoning_content` or `reasoning`
 - System, user, assistant, and tool messages
 - OpenAI-compatible tool calling
 - Temperature, max token, stop sequence, and timeout settings
@@ -44,6 +45,14 @@ For development with automatic reloads:
 ```bash
 lms dev
 ```
+
+Run the local streaming compatibility check:
+
+```bash
+npm run verify
+```
+
+The check uses a local mock endpoint and does not require an API key.
 
 ## Configure
 
@@ -96,12 +105,17 @@ npm run probe -- --base-url "https://provider.example/v1" `
   --prompt "Reply with OK."
 ```
 
+Add `--no-stream` to compare a non-streaming response, or `--raw` to print parsed response chunks.
+Neither mode prints the API key or Authorization header.
+
 The `/models` endpoint is optional. If it is unavailable, enter the model ID manually in LM
 Studio.
 
 ## Notes
 
 - The endpoint must support OpenAI-compatible `POST /chat/completions` streaming.
+- The request timeout covers connection setup and response headers; an active stream can continue
+  beyond that value.
 - Tool calling requires support from both the endpoint and the selected model.
 - Provider-specific request extensions are not sent.
 - LM Studio's plugin settings API does not currently support a dynamic model dropdown, so the

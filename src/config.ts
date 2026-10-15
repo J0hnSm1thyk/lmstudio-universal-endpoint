@@ -77,12 +77,12 @@ export const globalConfigSchematics = createConfigSchematics()
     "numeric",
     {
       displayName: "Request Timeout (ms)",
-      subtitle: "Maximum time to wait for the endpoint before showing a timeout error.",
+      subtitle: "Maximum time to establish the request and receive response headers.",
       min: 1_000,
-      max: 600_000,
+      max: 3_600_000,
       int: true,
       step: 1_000,
     },
-    120_000,
+    600_000,
   )
   .build();
